@@ -1,36 +1,72 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# CASHLESS
 
-## Getting Started
+A worldwide digital card product — send, spend, and shop across 180+ countries without the bank. Built with Next.js 16, React 19, and Tailwind v4 in a strict **brutalist** design system (4 colors, 2 fonts, square corners, hard offset shadows only).
 
-First, run the development server:
+## Stack
+
+- **Next.js 16.2.11** (App Router + Turbopack)
+- **React 19.2.4**
+- **Tailwind CSS v4**
+- **lucide-react** for icons
+- **Space Grotesk Bold + IBM Plex Mono** via `next/font/google`
+
+## Design system
+
+| Token | Value |
+|---|---|
+| Background | `#fafafa` |
+| Text (dark surfaces) | `#0a0e27` |
+| Accent | `#FF4D00` |
+| Hairlines | `rgba(10, 14, 39, 0.2)` |
+| Display font | Space Grotesk Bold 700 |
+| Body / labels | IBM Plex Mono (400 / 500) |
+| Corners | Square (border-radius 0) |
+| Shadows | Hard offset only — `8px 8px 0 #FF4D00`, `12px 12px 0 #FF4D00`, `16px 16px 0 #FF4D00` |
+
+## Routes
+
+| Path | Screen |
+|---|---|
+| `/` | Landing page (hero + trust body + footer) |
+| `/signup` | Sign-Up Form (Step 1 of 4) |
+| `/signup/verify` | OTP Verification (Step 2) |
+| `/signup/details` | Personal Details / KYC (Step 3) |
+| `/signup/card` | Card Customization (Step 4) |
+| `/signup/confirmation` | Confirmation & Welcome |
+| `/dashboard` | User Dashboard |
+| `/transactions/[id]` | Transaction Details |
+| `/transfer/success` | Transaction Complete Modal |
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Build
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm start
+```
 
-## Learn More
+## Project structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+app/
+├── _components/      Shared UI (Nav, Footer, CardMockup, FormField, BrutalButton, SignupHeader)
+├── signup/           Sign-up flow (4 steps + confirmation)
+├── dashboard/        Authenticated home
+├── transactions/     Transaction detail (dynamic route)
+├── transfer/         Transfer success modal
+├── layout.tsx        Root layout with fonts + tokens
+├── page.tsx          Landing page (Screens 1 + 10 + 11)
+└── globals.css       Brutalist tokens + defensive button-text rules
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Source of truth
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The Flowstep canvas at https://app.flowstep.ai/file?activeFileId=6e1e5e1d-fd31-4eeb-a6a0-c7bc194062ab contains the 11 source-of-truth designs. The Next.js routes above are pixel-perfect implementations of those designs.
