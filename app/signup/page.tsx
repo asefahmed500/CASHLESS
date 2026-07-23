@@ -47,7 +47,7 @@ export default function SignUpPage() {
           >
             <div>CREATE</div>
             <div>YOUR</div>
-            <div>ACCOUNT.</div>
+            <div>ACCOUNT</div>
           </div>
           <div className="max-w-[40ch] font-mono text-[#0a0e27]/70 text-base leading-6 mt-6">
             Four steps. Two minutes. One card that works everywhere.

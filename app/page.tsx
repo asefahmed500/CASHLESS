@@ -1,4 +1,9 @@
 import Link from "next/link";
+import Features from "./_sections/Features";
+import HowItWorks from "./_sections/HowItWorks";
+import Testimonials from "./_sections/Testimonials";
+import Pricing from "./_sections/Pricing";
+import FAQ from "./_sections/FAQ";
 import {
   ArrowRight,
   FileText,
@@ -44,12 +49,11 @@ const SIDEBAR_ITEMS = [
 
 export default function Home() {
   return (
-    <div className="bg-white text-neutral-950 w-full">
+    <div className="bg-white text-neutral-950 w-full scroll-smooth" style={{ scrollBehavior: 'smooth' }}>
       {/* HERO SECTION (Screen 1) */}
-      <section className="relative bg-[linear-gradient(180deg,#fafafa_0%,#f4f4f0_100%)] text-[#0a0e27] w-full overflow-hidden">
-        <div className="min-h-[1024px] flex flex-col">
+      <section className="relative bg-[linear-gradient(180deg,#fafafa_0%,#f4f4f0_100%)] text-[#0a0e27] w-full overflow-hidden min-h-screen flex flex-col scroll-mt-16">
           {/* Top nav */}
-          <div className="z-30 bg-neutral-50 flex px-12 justify-between items-center w-full h-16">
+          <div className="z-50 bg-neutral-50 flex px-12 justify-between items-center w-full h-16 sticky top-0">
             <span
               className="font-bold text-[#0a0e27] text-lg leading-7"
               style={{
@@ -57,7 +61,7 @@ export default function Home() {
                 letterSpacing: "-0.5px",
               }}
             >
-              CASHLESS.
+              CASHLESS
             </span>
             <div className="flex items-center gap-8">
               {["PRODUCT", "FEATURES"].map((label) => (
@@ -107,11 +111,6 @@ export default function Home() {
           </div>
           <div className="z-30 bg-[#0a0e27]/20 w-full h-px" />
 
-          {/* Structural hairlines */}
-          <div className="left-[55%] z-10 border-t-0 border-r-0 border-b-0 border-l border-solid border-[#0a0e27]/20 absolute top-16 bottom-0" />
-          <div className="z-10 border-t border-r-0 border-b-0 border-l-0 border-solid border-[#0a0e27]/20 absolute inset-x-0 top-[128px]" />
-          <div className="left-[60%] z-10 border-t-0 border-r-0 border-b-0 border-l border-solid border-[#0a0e27]/20 absolute top-16 bottom-0" />
-
           {/* Hero content */}
           <div className="relative flex px-16 pt-24 pb-16 items-center w-full flex-1">
             <div className="flex items-center gap-12 w-full">
@@ -133,11 +132,11 @@ export default function Home() {
                       letterSpacing: "-3.84px",
                     }}
                   >
-                    YOUR CARD.
+                    YOUR CARD
                     <br />
-                    YOUR RULES.
+                    YOUR RULES
                     <br />
-                    ZERO BANK.
+                    ZERO BANK
                   </h1>
                   <p className="max-w-[480px] font-mono text-[#0a0e27]/70 text-lg leading-[27px]">
                     Send, spend, and shop across 180+ countries — instantly and
@@ -162,13 +161,18 @@ export default function Home() {
                   </Link>
                   <Link
                     href="#trust"
-                    className="bg-transparent font-bold uppercase shadow-none text-[#0a0e27] text-sm leading-5 tracking-[1.28px] border-[#0a0e27] border-2 border-solid flex px-8 items-center gap-3 h-14 hover:bg-[#0a0e27] hover:text-[#fafafa] transition-colors"
-                    style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    className="bg-transparent font-bold uppercase shadow-none border-[#0a0e27] border-2 border-solid flex px-8 items-center gap-3 h-14 hover:bg-[#0a0e27] transition-colors"
+                    style={{
+                      fontFamily: "var(--font-space-grotesk)",
+                      color: "#0a0e27",
+                      fontSize: "14px",
+                      letterSpacing: "0.08em",
+                    }}
                   >
                     <div className="size-4 shrink-0 flex justify-center items-center">
-                      <FileText className="size-4 shrink-0" />
+                      <FileText className="size-4 shrink-0" style={{ color: "#0a0e27" }} />
                     </div>
-                    <span className="leading-none">READ THE BRIEF</span>
+                    <span className="leading-none" style={{ color: "#0a0e27" }}>READ THE BRIEF</span>
                   </Link>
                 </div>
 
@@ -234,37 +238,113 @@ export default function Home() {
                 </div>
               </div>
 
-              {/* RIGHT — Card mockup */}
-              <div className="relative basis-[42%] flex justify-center items-center h-[560px]">
+              {/* RIGHT — 3 animated cards */}
+              <div className="relative basis-[42%] flex justify-center items-center h-[560px] overflow-visible">
+                {/* Back card — tilted -8deg, offset upper-left, opacity 60% */}
                 <div
-                  className="relative z-10 bg-[linear-gradient(135deg,#0a0e27_0%,#1a1f3a_100%)] shadow-[16px_16px_0_0_#FF4D00] border-[#0a0e27] border-2 border-solid flex p-8 flex-col justify-between overflow-hidden"
-                  style={{ width: "480px", height: "300px", transform: "rotate(12deg)" }}
+                  className="absolute border-[#0a0e27] border-2 border-solid bg-[#0a0e27] flex p-6 flex-col justify-between"
+                  style={{
+                    width: "320px",
+                    height: "200px",
+                    transform: "rotate(-8deg) translate(-40px, -100px)",
+                    opacity: 0.6,
+                    zIndex: 1,
+                    animation: "heroCardBack 6s ease-in-out infinite",
+                  }}
                 >
                   <div className="flex justify-between items-start">
                     <span
-                      className="font-bold text-[#fafafa] text-2xl leading-8"
+                      className="font-bold text-[#fafafa] text-sm"
                       style={{ fontFamily: "var(--font-space-grotesk)" }}
                     >
                       CASHLESS
                     </span>
-                    <div className="size-6 shrink-0 bg-[#FF4D00]" />
+                    <div className="w-3 h-3 bg-[#FF4D00]" />
+                  </div>
+                  <div className="text-center">
+                    <span className="font-mono uppercase text-[#FF4D00] text-[9px] tracking-[1.5px]">
+                      PAYMENT SENT · $48
+                    </span>
+                  </div>
+                  <div className="h-2" />
+                </div>
+
+                {/* Front card — tilted 10deg, offset lower-right, opacity 80%, motion blur */}
+                <div
+                  className="absolute border-[#0a0e27] border-2 border-solid bg-[#0a0e27] flex p-6 flex-col justify-between overflow-hidden"
+                  style={{
+                    width: "360px",
+                    height: "225px",
+                    transform: "rotate(10deg) translate(40px, 100px)",
+                    opacity: 0.8,
+                    zIndex: 2,
+                    background:
+                      "linear-gradient(135deg, #0a0e27 0%, #0a0e27 70%, rgba(250,250,250,0.08) 100%)",
+                    animation: "heroCardFront 6s ease-in-out infinite",
+                  }}
+                >
+                  <div className="flex justify-between items-start">
+                    <span
+                      className="font-bold text-[#fafafa] text-base"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
+                      CASHLESS
+                    </span>
+                    <div className="w-4 h-4 bg-[#FF4D00]" />
+                  </div>
+                  <div className="text-center">
+                    <span className="font-mono uppercase text-[#fafafa]/70 text-[10px] tracking-wider">
+                      EXCHANGE · 1 USD = 0.92 EUR
+                    </span>
+                  </div>
+                  <div className="flex justify-between items-end">
+                    <span className="font-mono text-[#fafafa] text-[9px]">JR</span>
+                    <span
+                      className="font-bold text-[#fafafa] text-[10px]"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
+                      VISA
+                    </span>
+                  </div>
+                </div>
+
+                {/* Middle (anchor) card — slight tilt, full opacity, with hard shadow + gradient face */}
+                <div
+                  className="relative border-[#0a0e27] border-2 border-solid shadow-[12px_12px_0_0_#FF4D00] flex p-8 flex-col justify-between overflow-hidden"
+                  style={{
+                    width: "440px",
+                    height: "275px",
+                    transform: "rotate(4deg)",
+                    background: "linear-gradient(135deg, #0a0e27 0%, #1a1f3a 100%)",
+                    zIndex: 3,
+                    animation: "heroCardMid 6s ease-in-out infinite",
+                  }}
+                >
+                  <div className="flex justify-between items-start">
+                    <span
+                      className="font-bold text-[#fafafa] text-xl leading-7"
+                      style={{ fontFamily: "var(--font-space-grotesk)" }}
+                    >
+                      CASHLESS
+                    </span>
+                    <div className="w-5 h-5 bg-[#FF4D00]" />
                   </div>
                   <div className="flex justify-center items-center gap-3">
                     {["4829", "0071", "4400", "0192"].map((group, i) => (
                       <div key={i} className="flex items-center">
                         {i > 0 && <div className="bg-neutral-50/30 w-px h-4 mx-3" />}
-                        <span className="font-mono text-[#fafafa]/60 text-lg leading-6 tracking-widest">
+                        <span className="font-mono text-[#fafafa]/60 text-sm leading-6 tracking-widest">
                           {group}
                         </span>
                       </div>
                     ))}
                   </div>
                   <div className="flex justify-between items-end">
-                    <span className="font-mono uppercase text-[#FF4D00] text-[10px] tracking-[1.2px]">
+                    <span className="font-mono uppercase text-[#FF4D00] text-[9px] tracking-[1.2px]">
                       JORDAN RIVERA
                     </span>
                     <span
-                      className="font-bold text-[#fafafa] text-xs leading-4"
+                      className="font-bold text-[#fafafa] text-[11px] leading-4"
                       style={{ fontFamily: "var(--font-space-grotesk)" }}
                     >
                       VISA
@@ -281,13 +361,12 @@ export default function Home() {
               BETA 0.1
             </span>
           </div>
-        </div>
       </section>
 
       {/* TRUST + DEMO BODY (Screen 10) */}
       <section
         id="trust"
-        className="bg-[linear-gradient(180deg,#fafafa_0%,#f0f0ec_100%)] font-mono text-[#0a0e27] flex px-16 py-12 flex-col"
+        className="bg-[linear-gradient(180deg,#fafafa_0%,#f0f0ec_100%)] font-mono text-[#0a0e27] flex px-16 py-12 flex-col min-h-screen"
       >
         {/* Section header */}
         <div className="flex justify-between items-center h-12">
@@ -296,7 +375,7 @@ export default function Home() {
               className="font-bold text-[#0a0e27] text-lg leading-7"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              CASHLESS.
+              CASHLESS
             </span>
             <span className="font-mono uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
               SECTION 02 — TRUST
@@ -324,7 +403,7 @@ export default function Home() {
             >
               BUILT ON
               <br />
-              TRUST.
+              TRUST
             </h1>
           </div>
 
@@ -386,7 +465,7 @@ export default function Home() {
               </div>
               <div className="border border-[#0a0e27]/30 flex px-3 items-center w-72 h-5">
                 <span className="font-mono uppercase text-[#0a0e27]/70 text-[9px] tracking-[1.5px]">
-                  APP.CASHLESS.CARD/DASHBOARD
+                  APP.CASHLESSCARD/DASHBOARD
                 </span>
               </div>
               <div className="bg-[#0a0e27] flex ml-auto justify-center items-center w-6 h-6">
@@ -647,6 +726,21 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FEATURES */}
+      <Features />
+
+      {/* HOW IT WORKS */}
+      <HowItWorks />
+
+      {/* TESTIMONIALS */}
+      <Testimonials />
+
+      {/* PRICING */}
+      <Pricing />
+
+      {/* FAQ */}
+      <FAQ />
 
       <Footer />
     </div>

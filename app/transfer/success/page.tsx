@@ -67,7 +67,7 @@ export default function TransferSuccessPage() {
             >
               MONEY
               <br />
-              ON ITS WAY.
+              ON ITS WAY
             </h1>
           </div>
           <div className="mt-4">

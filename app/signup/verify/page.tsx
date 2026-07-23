@@ -77,7 +77,7 @@ export default function VerifyPage() {
             className="font-bold text-[#0a0e27] text-lg leading-7"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            CASHLESS.
+            CASHLESS
           </Link>
           <span className="uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
             STEP 02 / 04
@@ -148,7 +148,7 @@ export default function VerifyPage() {
           >
             <div>VERIFY</div>
             <div>YOUR</div>
-            <div>PHONE.</div>
+            <div>PHONE</div>
           </div>
 
           <div className="max-w-[42ch] text-[#0a0e27]/70 text-sm leading-6 mt-4 w-full">

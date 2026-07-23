@@ -49,7 +49,7 @@ export default function CardPage() {
             className="font-bold text-lg leading-7"
             style={{ fontFamily: "var(--font-space-grotesk), sans-serif" }}
           >
-            CASHLESS.
+            CASHLESS
           </Link>
           <span className="font-mono uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
             STEP 04 / 04
@@ -67,7 +67,7 @@ export default function CardPage() {
             </span>
           </div>
           <div className="pt-6">
-            {["CUSTOMIZE", "YOUR", "CARD."].map((word) => (
+            {["CUSTOMIZE", "YOUR", "CARD"].map((word) => (
               <div
                 key={word}
                 className="font-bold text-[#0a0e27] text-7xl leading-17 tracking-[-0.64px]"

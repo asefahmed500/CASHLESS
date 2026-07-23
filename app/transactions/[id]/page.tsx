@@ -52,7 +52,7 @@ export default async function TransactionDetailsPage({
             className="font-bold text-[#0a0e27] text-lg leading-7"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            CASHLESS.
+            CASHLESS
           </Link>
           <span className="font-mono uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
             TRANSACTION — DETAILS
@@ -98,7 +98,7 @@ export default async function TransactionDetailsPage({
               >
                 SPOTIFY
                 <br />
-                PREMIUM.
+                PREMIUM
               </h1>
             </div>
             <div className="flex pt-3 items-center gap-3">

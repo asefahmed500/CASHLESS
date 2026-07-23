@@ -18,7 +18,7 @@ export default function Nav() {
     <header className="h-16 border-b border-[#0a0e27]/20 flex items-center px-16 bg-[#fafafa] sticky top-0 z-50">
       {/* Brand */}
       <Link href="/" className="font-display font-bold text-[18px] text-[#0a0e27]">
-        CASHLESS.
+        CASHLESS
       </Link>
 
       {/* Center nav */}

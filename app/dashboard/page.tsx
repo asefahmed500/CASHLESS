@@ -47,7 +47,7 @@ export default function DashboardPage() {
               className="font-bold text-lg leading-7 tracking-tight"
               style={{ fontFamily: "var(--font-space-grotesk)" }}
             >
-              CASHLESS.
+              CASHLESS
             </Link>
             <span className="font-mono uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
               DASHBOARD

@@ -26,7 +26,7 @@ export default function DetailsPage() {
             className="font-bold text-[#0a0e27] text-lg leading-7"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            CASHLESS.
+            CASHLESS
           </Link>
           <span className="font-mono uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
             STEP 03 / 04
@@ -59,7 +59,7 @@ export default function DetailsPage() {
                 <br />
                 YOUR
                 <br />
-                PROFILE.
+                PROFILE
               </h1>
             </div>
             <p className="max-w-[40ch] font-mono text-[#0a0e27]/70 text-base leading-6 mt-6">

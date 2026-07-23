@@ -40,7 +40,7 @@ export default function ConfirmationPage() {
             className="font-bold text-[#0a0e27] text-lg leading-7"
             style={{ fontFamily: "var(--font-space-grotesk)" }}
           >
-            CASHLESS.
+            CASHLESS
           </Link>
           <span className="uppercase text-[#0a0e27]/70 text-[11px] tracking-[1.92px]">
             STEP 04 / 04 — COMPLETE
@@ -76,7 +76,7 @@ export default function ConfirmationPage() {
             >
               YOUR CARD
               <br />
-              IS READY.
+              IS READY
             </h1>
           </div>
           <div className="max-w-[50ch] pt-6">
